@@ -36,7 +36,7 @@ img{
 
 .container{
     display: grid;
-    grid-template-columns: 18% repeat(5 , 1fr);
+    grid-template-columns: repeat(6 , 1fr);
     height: 100vh;
 }
 
@@ -69,9 +69,6 @@ input{
     border: none;
 }
 
-input:focus{
-    outline: none;
-}
 
 .left, .right{
     display: flex;
@@ -131,6 +128,7 @@ li{
     font-size: 1.2em;
     font-weight: bold;
     z-index: 2;
+    padding-right: 40px;
 }
 .dashboard{
     font-size: 1.3em;
@@ -178,6 +176,10 @@ li:active{
     transform: scale(0.97);
 }
 
+input:focus{
+    outline: none;
+}
+
 .sidebar > div > div > p:hover{
     color: #e2e8f0;
     transition: 0.2s ease-in-out;
@@ -185,6 +187,11 @@ li:active{
 }
 
 @media (max-width:1067px){
+
+    .container{
+        width: 100vw;
+        height: 100vh;
+    }
 
     .card{
         width: 200px;
@@ -199,19 +206,74 @@ li:active{
     }
 
     .header{
-        grid-area: 1/1/1/8;
+        grid-row-start:1 ;
+        grid-row-end: 1;
+        grid-column-start:1 ;
+        grid-column-end: -1;
+        padding-left: 0px;
+        padding-top: 0px;
     }
 
+    input{
+        appearance: none;
+        width: 100px;
+        height: 25px;
+        border-radius: 15px;
+        background: #c5c5c6aa;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .navbar{
-        grid-area: 2/1/2/8;
+        grid-row-start:2 ;
+        grid-row-end:2 ;
+        grid-column-start:1 ;
+        grid-column-end: -1 ;
     }
 
     .menu{
-        grid-area: 3/1/7/7;
+        grid-row-start:3 ;
+        grid-column-start:1 ;
+    }
+
+    .ads{
+        grid-row-start: 3 ;
+        grid-column-start: -1 ;
+        grid-column-end: -1 ; 
     }
 
     .sidebar{
-        transform: translate(-200px);
-        transition: 0.5s;
+        transform: translate(-250px) ;
+        transition: 0.5s ease-in-out;
     }
+
+
 }
